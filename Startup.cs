@@ -29,8 +29,8 @@ namespace Kolokwium_2
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<Class1>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
-            services.AddScoped<Interface, Class>();
+            services.AddDbContext<KolokwiumContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Default")));
+            services.AddScoped<IAlbumService, AlbumService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
